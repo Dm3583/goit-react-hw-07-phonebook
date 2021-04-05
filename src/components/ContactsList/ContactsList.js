@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import contactsActions from '../../redux/phonebook/contacts-actions';
+import contactsOperations from '../../redux/phonebook/contacts-operations';
 import ListItem from './ListItem';
 import PropTypes from 'prop-types';
 import './ContactsList.scss';
 
-const ContactsList = ({ contacts, deleteContact }) => {
-  return (
-    <ul className="ContactsList">
-      {contacts.map(contact => (
-        <ListItem
-          key={contact.id}
-          contact={contact}
-          deleteContact={deleteContact}
-        />
-      ))}
-    </ul>
-  );
-};
+class ContactsList extends Component {
+  componentDidMount() {
+    this.props.fetchContacts();
+  }
+
+  render() {
+    const { contacts, deleteContact } = this.props;
+    console.log('CONTACTS ', contacts);
+    return (
+      <ul className="ContactsList">
+        {contacts.map(contact => (
+          <ListItem
+            key={contact.id}
+            contact={contact}
+            deleteContact={deleteContact}
+          />
+        ))}
+      </ul>
+    );
+  }
+}
 
 ContactsList.propTypes = {
   contacts: PropTypes.arrayOf(
@@ -44,7 +52,8 @@ const mapStateToProps = ({ contacts: { items, filter } }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  deleteContact: id => dispatch(contactsActions.deleteContact(id)),
+  deleteContact: id => dispatch(contactsOperations.deleteContact(id)),
+  fetchContacts: () => dispatch(contactsOperations.fetchContacts()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactsList);

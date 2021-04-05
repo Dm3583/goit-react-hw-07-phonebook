@@ -1,19 +1,24 @@
 {
-    "contacts": [
-        {
-            "id": "1-1-1",
-            "name": "Dr Brain",
-            "phone": "1234567890"
-        },
-        {
-            "id": "2-2-2",
-            "name": "Dr Main",
-            "phone": "4567890123"
-        },
-        {
-            "id": "3-3-3",
-            "name": "Dr Strain",
-            "phone": "1234890567"
-        }
-    ]
+  "contacts": [
+    {
+      "id": "5966517c-b1d8-43db-9163-5f7dc79c2979",
+      "name": "Lera",
+      "number": "2345678901"
+    },
+    {
+      "id": "f4542541-596d-4a90-aae5-5e131ff67c92",
+      "name": "ertyry",
+      "number": "45656754685"
+    },
+    {
+      "id": "572be6f9-d34e-4323-a78e-fa2cd1e7ec09",
+      "name": "nasir",
+      "number": "2345234523"
+    },
+    {
+      "id": "366fa02e-eb50-407c-93ad-35031f7d84da",
+      "name": "sdfg",
+      "number": "2345456734"
+    }
+  ]
 }
