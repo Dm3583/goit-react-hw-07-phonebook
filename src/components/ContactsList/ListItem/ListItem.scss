@@ -1,0 +1,18 @@
+@import 'styles/shared.scss';
+
+.ListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid $dark;
+  margin-bottom: 5px;
+}
+
+.ListItem__button {
+  @extend %button;
+  transition: background-color $timing-function 0.25s;
+  &:hover {
+    background-color: $light-gray;
+  }
+}
