@@ -1,39 +1,24 @@
 {
   "contacts": [
     {
-      "id": "4a75f83d-b5e0-41d3-8edd-5be699b0826c",
-      "name": "asdf",
-      "number": "13453452345"
+      "id": "dfee780f-da64-4f26-8333-6647de705175",
+      "name": "E",
+      "number": "23454567345"
     },
     {
-      "id": "2ed9a28b-9c83-4b68-897d-43b94ab19f79",
-      "name": "qwerzxc",
-      "number": "123423454567"
+      "id": "425491c7-8242-4335-a025-a53cddeb2fc6",
+      "name": "w",
+      "number": "245645674567"
     },
     {
-      "id": "7704981b-25e7-4f79-ae3d-0f582ec06485",
-      "name": "qwertzxc",
-      "number": "12343456234"
+      "id": "78363308-e6eb-4be9-aabc-73cab3e8cfdf",
+      "name": "g",
+      "number": "3456567567"
     },
     {
-      "id": "0179aac6-1bac-4bf9-a4ac-d6b211de4e62",
-      "name": "asdf",
-      "number": "12342345456"
-    },
-    {
-      "id": "7fb2cb7f-74fa-4098-9e69-9f648f9dfbcf",
-      "name": "asdf",
-      "number": "1234456345"
-    },
-    {
-      "id": "fb553a14-4e3b-4d6d-a521-29dbc70845fa",
-      "name": "ASDF",
-      "number": "12343456456"
-    },
-    {
-      "id": "1706099e-7dd4-4368-8231-6c77b409e474",
-      "name": "gjd",
-      "number": "1234234545"
+      "id": "51011032-aeed-4f45-b317-fa1ae734a157",
+      "name": "v",
+      "number": "23455678234"
     }
   ]
 }

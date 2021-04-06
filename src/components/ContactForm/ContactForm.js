@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import contactOperations from '../../redux/phonebook/contacts-operations';
+import contactsSelectors from '../../redux/phonebook/contacts-selectors';
 import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
 import './ContactForm.scss';
@@ -24,8 +25,24 @@ class ContactForm extends Component {
     this.setState({ [stateField]: e.target.value });
   };
 
+  isNameExist = (contacts, name) => {
+    const normalizedName = name.toLowerCase();
+    return contacts.find(
+      contact => contact.name.toLowerCase() === normalizedName,
+    );
+  };
+
+  createContact = (name, number) => {
+    return {
+      id: uuid(),
+      name,
+      number,
+    };
+  };
+
   handleSubmit = e => {
     e.preventDefault();
+    const { allContacts, addContact } = this.props;
     const { name, number } = this.state;
 
     if (!name || !number) {
@@ -33,12 +50,12 @@ class ContactForm extends Component {
       return;
     }
 
-    const contact = {
-      id: uuid(),
-      name,
-      number,
-    };
-    this.props.addContact(contact);
+    if (!this.isNameExist(allContacts, name)) {
+      addContact(this.createContact(name, number));
+    } else {
+      alert(`${name} is already in contacts`);
+    }
+
     this.clearInput();
   };
 
@@ -88,8 +105,12 @@ class ContactForm extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  allContacts: contactsSelectors.getAllContacts(state),
+});
+
 const mapDispatchToProps = dispatch => ({
   addContact: contact => dispatch(contactOperations.addContact(contact)),
 });
 
-export default connect(null, mapDispatchToProps)(ContactForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

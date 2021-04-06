@@ -14,7 +14,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import contactsReducer from './phonebook/contacts-reducers';
+import { contactsReducer, error, loader } from './phonebook/contacts-reducers';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -28,6 +28,8 @@ const middleware = [
 const store = configureStore({
   reducer: {
     contacts: contactsReducer,
+    error,
+    loader,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',
