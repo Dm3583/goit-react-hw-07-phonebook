@@ -6,7 +6,7 @@ axios.defaults.baseURL = 'http://localhost:4000';
 const addContact = contact => dispatch => {
   dispatch(actions.addContactRequest());
 
-  return axios
+  axios
     .post('/contacts', contact)
     .then(({ data }) => dispatch(actions.addContactSuccess(data)))
     .catch(error => dispatch(actions.addContactError(error)));
@@ -15,7 +15,7 @@ const addContact = contact => dispatch => {
 const fetchContacts = () => dispatch => {
   dispatch(actions.fetchContactsRequest());
 
-  return axios
+  axios
     .get('/contacts')
     .then(({ data }) => dispatch(actions.fetchContactsSuccess(data)))
     .catch(error => dispatch(actions.fetchContactsError(error)));
@@ -24,7 +24,7 @@ const fetchContacts = () => dispatch => {
 const deleteContact = contactId => dispatch => {
   dispatch(actions.deleteContactRequest());
 
-  return axios
+  axios
     .delete(`/contacts/${contactId}`)
     .then(() => dispatch(actions.deleteContactSuccess(contactId)))
     .catch(error => dispatch(actions.deleteContactError(error)));
