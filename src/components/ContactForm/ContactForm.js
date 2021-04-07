@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import contactOperations from '../../redux/phonebook/contacts-operations';
-import contactsSelectors from '../../redux/phonebook/contacts-selectors';
 import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
 import './ContactForm.scss';
+import { contactsOperations, contactsSelectors } from '../../redux/phonebook';
 
 const INITIAL_STATE = {
   name: '',
@@ -51,7 +50,8 @@ class ContactForm extends Component {
     }
 
     if (!this.isNameExist(allContacts, name)) {
-      addContact(this.createContact(name, number));
+      const contact = this.createContact(name, number);
+      addContact(contact);
     } else {
       alert(`${name} is already in contacts`);
     }
@@ -110,7 +110,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addContact: contact => dispatch(contactOperations.addContact(contact)),
+  addContact: contact => dispatch(contactsOperations.addContact(contact)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

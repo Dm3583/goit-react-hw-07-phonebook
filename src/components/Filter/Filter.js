@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import contactsActions from '../../redux/phonebook/contacts-actions';
 import PropTypes from 'prop-types';
 import './Filter.scss';
-import contactsSelectors from '../../redux/phonebook/contacts-selectors';
+import { contactsSelectors, contactsActions } from '../../redux/phonebook';
 
 const Filter = ({ value, onChange }) => {
   return (

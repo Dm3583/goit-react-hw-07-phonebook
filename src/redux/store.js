@@ -1,12 +1,12 @@
 import {
   configureStore,
   getDefaultMiddleware,
-  combineReducers,
+  // combineReducers,
 } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import {
-  persistStore,
-  persistReducer,
+  // persistStore,
+  // persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -14,7 +14,9 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { contactsReducer, error, loader } from './phonebook/contacts-reducers';
+import { contactsReducer } from './phonebook/contacts-reducers';
+import { loader } from './loader-reducer';
+import { error } from './error-reducer';
 
 const middleware = [
   ...getDefaultMiddleware({

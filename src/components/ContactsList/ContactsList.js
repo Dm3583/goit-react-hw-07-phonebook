@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import contactsOperations from '../../redux/phonebook/contacts-operations';
 import ListItem from './ListItem';
 import PropTypes from 'prop-types';
 import './ContactsList.scss';
-import contactsSelectors from '../../redux/phonebook/contacts-selectors';
+import { contactsOperations, contactsSelectors } from '../../redux/phonebook';
 
 class ContactsList extends Component {
   componentDidMount() {
